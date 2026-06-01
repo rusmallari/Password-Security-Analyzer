@@ -1,7 +1,5 @@
 # Password-Security-Analyzer
 
-# Password Security Analyzer
-
 A lightweight Python tool that evaluates password strength using a multi-factor scoring algorithm. Designed with real-world password policy standards in mind, it analyzes credentials across six security criteria and returns a strength rating with actionable feedback to help users build stronger passwords.
 
 ---
