@@ -20,9 +20,9 @@ A Python desktop app that analyzes password strength in real time and checks whe
 
 ## Screenshots
 
-<img width="300" height="500" alt="weak password" src="https://github.com/user-attachments/assets/ef998dda-9339-47bd-88c7-787200d318e6" />
-<img width="300" height="500" alt="medium password" src="https://github.com/user-attachments/assets/e76ac4a9-11cd-447a-b750-810f5d73579e" />
-<img width="300" height="500" alt="strong password" src="https://github.com/user-attachments/assets/5768128a-e175-4e73-aa2c-1eb1875fd795" />
+<img width="250" height="500" alt="weak password" src="https://github.com/user-attachments/assets/ef998dda-9339-47bd-88c7-787200d318e6" />
+<img width="250" height="500" alt="medium password" src="https://github.com/user-attachments/assets/e76ac4a9-11cd-447a-b750-810f5d73579e" />
+<img width="250" height="500" alt="strong password" src="https://github.com/user-attachments/assets/5768128a-e175-4e73-aa2c-1eb1875fd795" />
 ---
 
 ## How It Works
