@@ -1,110 +1,44 @@
-# Password-Security-Analyzer
+# Password Security Analyzer
 
-A lightweight Python tool that evaluates password strength using a multi-factor scoring algorithm. Designed with real-world password policy standards in mind, it analyzes credentials across six security criteria and returns a strength rating with actionable feedback to help users build stronger passwords.
+A Python desktop app that analyzes password strength in real time and checks whether a password has been exposed in a known data breach using the [Have I Been Pwned](https://haveibeenpwned.com/) API.
+
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue) ![License](https://img.shields.io/badge/License-MIT-green) ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 
 ---
 
 ## Features
 
-- Evaluates passwords across **6 security criteria**
-- Returns a **Weak / Medium / Strong** strength rating with a numeric score
-- Provides **specific, actionable suggestions** when criteria aren't met
-- Lightweight — runs entirely in the terminal, no dependencies required
+- **Real-time strength analysis** — scores your password out of 6 as you type
+- **Shannon entropy calculation** — measures true randomness, not just character variety
+- **Crack time estimation** — estimates how long a modern GPU would take to brute-force it
+- **Have I Been Pwned integration** — checks if your password has appeared in a known data breach
+- **k-anonymity model** — only the first 5 characters of your SHA1 hash are sent to the API; your actual password never leaves your machine
+- **Dark mode GUI** — built with Python's built-in `tkinter` library
+- **Show/Hide password toggle**
+
+---
+
+## Screenshots
+
+> _Coming soon_
 
 ---
 
 ## How It Works
 
-The analyzer checks each password against the following criteria:
+### Strength Scoring
+The analyzer checks 6 rules and gives one point for each:
 
-| Criteria | Points |
+| Rule | Points |
 |---|---|
-| At least 8 characters | +1 |
-| At least 12 characters | +1 |
-| Contains uppercase letter (A–Z) | +1 |
-| Contains lowercase letter (a–z) | +1 |
-| Contains a number (0–9) | +1 |
-| Contains a special character (!@#$...) | +1 |
+| At least 8 characters | 1 |
+| At least 12 characters | 1 |
+| Contains an uppercase letter | 1 |
+| Contains a lowercase letter | 1 |
+| Contains a number | 1 |
+| Contains a special character | 1 |
 
-**Score ratings:**
-- `0–2` → **WEAK**
-- `3–4` → **MEDIUM**
-- `5–6` → **STRONG**
+A score of 0–2 is **WEAK**, 3–4 is **MEDIUM**, and 5–6 is **STRONG**.
 
----
-
-## Demo
-
-```
-=== Password Strength Checker ===
-Enter a password: hello
-
---- Results ---
-Strength: WEAK
-Score: 2/6
-
-Suggestions:
-- Make it at least 8 characters long.
-- Add at least one uppercase letter.
-- Add at least one number.
-- Add at least one special character.
-```
-
-```
-=== Password Strength Checker ===
-Enter a password: MyP@ssw0rd123
-
---- Results ---
-Strength: STRONG
-Score: 6/6
-
-Your password is strong. Good job.
-```
-
----
-
-## Installation & Usage
-
-No external libraries required — just Python 3.
-
-```bash
-# Clone the repository
-git clone https://github.com/rusmallari/Password-Security-Analyzer.git
-
-# Navigate into the folder
-cd Password-Security-Analyzer
-
-# Run the tool
-python password_analyzer.py
-```
-
----
-
-## Tech Stack
-
-- **Python 3**
-- **re** (Python standard library — regular expressions)
-
----
-
-## Security Concepts Applied
-
-- **Password complexity policies** — mirrors enterprise standards (NIST SP 800-63B guidelines)
-- **Multi-factor credential evaluation** — length, entropy, and character diversity
-- **User feedback design** — surfaces specific weaknesses rather than a generic pass/fail
-
----
-
-## Future Improvements
-
-- Check against a list of commonly used passwords (e.g. "password123", "qwerty")
-- Add a GUI using `tkinter` with color-coded strength indicator
-- Integrate with HaveIBeenPwned API to flag previously breached passwords
-- Export results to a log file for batch password auditing
-
----
-
-## Author
-
-**Russel Mallari**
-[LinkedIn](https://www.linkedin.com/in/russel-mallari) • [GitHub](https://github.com/rusmallari)
+### Shannon Entropy
+Entropy measures how unpredictable a password is based on character frequency distribution. The formula used is:
